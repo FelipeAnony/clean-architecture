@@ -1,10 +1,12 @@
-export const roots = ['<rootDir>/src'];
-export const collectCoverageFrom = ['<rootDir>/src/**/*.{ts, tsx}'];
-export const coverageDirectory = 'coverage';
-export const testEnvironment = 'node';
-export const transform = {
-  '.+\\.ts$': 'ts-jest',
-};
-export const moduleNameMapper = {
-  '@/(.*)': '<rootDir>/src/$1',
+module.exports = {
+  roots: ['<rootDir>/src'],
+  collectCoverageFrom: ['<rootDir>/src/**/*.{ts, tsx}'],
+  coverageDirectory: 'coverage',
+  testEnvironment: 'node',
+  transform: {
+    '.+\\.ts$': 'ts-jest',
+  },
+  moduleNameMapper: {
+    '@/(.*)': '<rootDir>/src/$1',
+  },
 };
