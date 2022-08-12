@@ -9,7 +9,7 @@
   "scripts": {
     "test": "jest --passWithNoTests",
     "test:watch": "npm run test -- --watch",
-    "test:staged": "npm run test -- --findRelatedTests src/",
+    "test:staged": "npm run test -- -o",
     "test:ci": "npm run test -- --coverage",
     "prepare": "husky install"
   },
