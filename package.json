@@ -10,7 +10,8 @@
     "test": "jest --passWithNoTests",
     "test:watch": "npm run test -- --watch",
     "test:staged": "npm run test -- findRelatedTests",
-    "test:ci": "npm run test -- --coverage"
+    "test:ci": "npm run test -- --coverage",
+    "prepare": "husky install"
   },
   "devDependencies": {
     "@types/jest": "^28.1.6",
@@ -22,4 +23,3 @@
     "typescript": "^4.7.4"
   }
 }
- 
