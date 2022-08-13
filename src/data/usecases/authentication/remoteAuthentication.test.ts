@@ -7,9 +7,19 @@ import { InvalidCredentialsError } from '@/domain/errors/invalidCredentialsError
 
 import { faker } from '@faker-js/faker';
 import { UnexpectedError } from '@/domain/errors/unexpectedError';
+import { AuthenticationParams } from '@/domain/usecases/authentication';
+import { AccountModel } from '@/domain/models/accountModels';
 
-const makeSut = (url = 'any_url') => {
-  const httpPostClientSpy = new HttpPostClientSpy();
+type SutTypes = {
+  sut: RemoteAuthentication;
+  httpPostClientSpy: HttpPostClientSpy<AuthenticationParams, AccountModel>;
+};
+
+const makeSut = (url = 'any_url'): SutTypes => {
+  const httpPostClientSpy = new HttpPostClientSpy<
+    AuthenticationParams,
+    AccountModel
+  >();
   const sut = new RemoteAuthentication(url, httpPostClientSpy);
 
   return { httpPostClientSpy, sut };
