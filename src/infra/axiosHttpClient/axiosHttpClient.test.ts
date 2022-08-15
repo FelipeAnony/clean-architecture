@@ -5,7 +5,13 @@ import { faker } from '@faker-js/faker';
 import { HttpPostParams } from '@/data/protocols/http';
 
 jest.mock('axios');
+const mockedAxiosResponse = {
+  data: {},
+  status: faker.internet.httpStatusCode(),
+};
 const mockedAxios = axios as jest.Mocked<typeof axios>;
+
+mockedAxios.post.mockResolvedValue(mockedAxiosResponse);
 
 const makeSut = () => {
   return { sut: new AxiosHttpClient() };
@@ -27,5 +33,14 @@ describe('AxiosHttpClient', () => {
       postParams.url,
       postParams.body
     );
+  });
+
+  test('Should return the correct status code and body', async () => {
+    const { sut } = makeSut();
+    const httpResponse = await sut.post(makePostParams());
+    expect(httpResponse).toEqual({
+      statusCode: mockedAxiosResponse.status,
+      body: mockedAxiosResponse.data,
+    });
   });
 });
