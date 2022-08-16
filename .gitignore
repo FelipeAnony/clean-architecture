@@ -2,4 +2,6 @@
 
 /coverage
 
+public/js
+
 *.txt
