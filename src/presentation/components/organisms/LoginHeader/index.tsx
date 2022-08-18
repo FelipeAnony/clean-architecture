@@ -1,3 +1,5 @@
+import { memo } from 'react';
+
 import Styles from './styles.scss';
 
 const LoginHeader: React.FC = () => {
@@ -8,4 +10,4 @@ const LoginHeader: React.FC = () => {
   );
 };
 
-export default LoginHeader;
+export default memo(LoginHeader, () => true);
