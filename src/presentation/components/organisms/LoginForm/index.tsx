@@ -1,5 +1,5 @@
-import Input from '@/presentation/components/atoms/Input';
-import Spinner from '@/presentation/components/atoms/Spinner';
+import { Input, Spinner } from '@/presentation/components/atoms';
+
 import Styles from './styles.scss';
 
 const LoginForm: React.FC = () => {

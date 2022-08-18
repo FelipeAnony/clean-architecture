@@ -2,9 +2,11 @@ import React from 'react';
 
 import Styles from './styles.scss';
 
-import Footer from '@/presentation/components/organisms/Footer';
-import LoginForm from '@/presentation/components/organisms/LoginForm';
-import LoginHeader from '@/presentation/components/organisms/LoginHeader';
+import {
+  Footer,
+  LoginForm,
+  LoginHeader,
+} from '@/presentation/components/organisms';
 
 const Login: React.FC = () => {
   return (
