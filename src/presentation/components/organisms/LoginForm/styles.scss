@@ -1,0 +1,96 @@
+@import '../../../../styles/colors';
+
+.form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 400px;
+  height: 300px;
+  margin: 0 auto;
+  background-color: $white;
+  padding: 16px;
+  border-radius: 4px;
+  box-shadow: 0 2px 8px 4px #ccc;
+}
+
+h2 {
+  margin-bottom: 30px;
+  text-align: center;
+  color: $primary;
+}
+
+.inputContainer {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+
+  &::after {
+    content: '';
+    display: inline-block;
+    margin-left: -20px;
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background-color: #ccc;
+  }
+}
+
+.invalid {
+  &::after {
+  content: '';
+  display: inline-block;
+  margin-left: 2px;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background-color: red;
+  }
+}
+
+.valid {
+  &::after {
+    content: '';
+    display: inline-block;
+    margin-left: -20px;
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background-color: green;
+  }
+}
+
+span {
+  margin-bottom: 10px;
+}
+
+.spinner {
+  height: 30px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+
+button {
+  background-color: $primary;
+  color: $white;
+  border-radius: 8px;
+  font-size: 16px;
+  border: none;
+  line-height: 40px;
+
+  &:hover {
+    opacity: 0.9;
+  }
+}
+
+a {
+  color: $primary-dark;
+  text-decoration: none;
+  text-align: center;
+  margin-top: 10px;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}

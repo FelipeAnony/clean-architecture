@@ -1,0 +1,13 @@
+@import '../../../../styles/colors';
+
+input {
+  border: 1px solid $primary-ligth;
+  line-height: 30px;
+  border-radius: 4px;
+  width: 100%;
+  padding: 0 24px 0 8px;
+
+  &:focus {
+    outline-color: $primary-ligth;
+  }
+}

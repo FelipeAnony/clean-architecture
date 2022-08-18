@@ -1,0 +1,11 @@
+@import '../../../../styles/colors';
+
+.header {
+  display: flex;
+  background-color: $primary;
+  border-top: 20px solid $primary-dark;
+  min-height: 80px;
+  color: $white;
+  align-items: center;
+  justify-content: center;
+}
