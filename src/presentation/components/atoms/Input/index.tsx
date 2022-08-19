@@ -5,7 +5,7 @@ type Props = {
   name: string;
   placeholder?: string;
   required?: boolean;
-  autofocus?: boolean;
+  autoFocus?: boolean;
   id?: string;
 };
 
