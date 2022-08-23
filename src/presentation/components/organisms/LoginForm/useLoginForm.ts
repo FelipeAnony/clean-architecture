@@ -1,12 +1,12 @@
 import { useState } from 'react';
 
-type UseLoginForm = {
+export type UseLoginFormReturn = {
   error: string;
   isLoading: boolean;
   handleClick: (params: any) => void;
 };
 
-export const useLoginForm = (): UseLoginForm => {
+export const useLoginForm = (): UseLoginFormReturn => {
   const [error, setError] = useState('');
   const [isLoading, setIsLoading] = useState(false);
 

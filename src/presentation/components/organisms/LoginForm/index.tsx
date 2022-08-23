@@ -29,7 +29,6 @@ const LoginForm: React.FC = () => {
       <ErrorWrapper>{error}</ErrorWrapper>
       <span className={Styles.spinner}>{isLoading ? <Spinner /> : ''}</span>
       <a href="/">Create Account</a>
-      <span>{isLoading ? 1 : 0}</span>
     </form>
   );
 };
