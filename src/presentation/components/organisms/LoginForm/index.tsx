@@ -25,8 +25,8 @@ const LoginForm: React.FC = () => {
       </div>
       <button type="submit">Login</button>
       <ErrorWrapper>{error}</ErrorWrapper>
-      <span data-testid="spinner" className={Styles.spinner}>
-        {isLoading ? <Spinner /> : ''}
+      <span className={Styles.spinner}>
+        {isLoading ? <Spinner data-testid="spinner" /> : ''}
       </span>
       <a href="/">Create Account</a>
     </form>

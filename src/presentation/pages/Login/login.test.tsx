@@ -1,14 +1,14 @@
-import { render } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
 
 import Login from './index';
 
-describe('', () => {
-  it('Should not render spinner and error on start', () => {
-    const { getByTestId } = render(<Login />);
-    const errorWrapper = getByTestId('errorWrapper');
-    const spinner = getByTestId('spinner');
+const renderSut = () => render(<Login />);
 
-    expect(errorWrapper.childElementCount).toBe(0);
-    expect(spinner.childElementCount).toBe(0);
+describe('', () => {
+  it('Should not render spinner and error message on start', () => {
+    renderSut();
+
+    expect(screen.queryByTestId('errorWrapper')).not.toBeInTheDocument();
+    expect(screen.queryByTestId('spinner')).not.toBeInTheDocument();
   });
 });
