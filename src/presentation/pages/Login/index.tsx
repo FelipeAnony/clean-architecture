@@ -1,5 +1,3 @@
-import React from 'react';
-
 import Styles from './styles.scss';
 
 import {

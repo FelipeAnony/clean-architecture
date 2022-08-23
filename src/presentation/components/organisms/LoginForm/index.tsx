@@ -1,12 +1,12 @@
 import { Input, Spinner } from '@/presentation/components/atoms';
-import { useState } from 'react';
+
 import { ErrorWrapper } from '../../molecules';
 
 import Styles from './styles.scss';
+import { useLoginForm } from './useLoginForm';
 
 const LoginForm: React.FC = () => {
-  const [error, setError] = useState('');
-  const [isLoading, setIsLoading] = useState(false);
+  const { handleClick, isLoading, error } = useLoginForm();
 
   return (
     <form className={Styles.form}>
@@ -23,12 +23,13 @@ const LoginForm: React.FC = () => {
       <div className={`${Styles.inputContainer} ${Styles.valid}`}>
         <Input placeholder="password" name="password" type="pasword" required />
       </div>
-      <button type="submit">Login</button>
+      <button type="submit" onClick={(e) => handleClick(e)}>
+        Login
+      </button>
       <ErrorWrapper>{error}</ErrorWrapper>
-      <span className={Styles.spinner}>
-        {isLoading ? <Spinner data-testid="spinner" /> : ''}
-      </span>
+      <span className={Styles.spinner}>{isLoading ? <Spinner /> : ''}</span>
       <a href="/">Create Account</a>
+      <span>{isLoading ? 1 : 0}</span>
     </form>
   );
 };
