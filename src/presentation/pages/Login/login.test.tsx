@@ -1,16 +1,8 @@
 import { render, screen } from '@testing-library/react';
 
-import {
-  defaultUseLoginReturn,
-  mockedUseLoginForm,
-} from '@/presentation/mocks';
-
 import Login from './index';
 
-jest.mock('@/presentation/components/organisms/LoginForm/useLoginForm');
-
-const renderSut = (params = defaultUseLoginReturn) => {
-  mockedUseLoginForm.mockReturnValue(params);
+const renderSut = () => {
   return render(<Login />);
 };
 
@@ -21,13 +13,14 @@ describe('', () => {
     expect(screen.queryByTestId('spinner')).not.toBeInTheDocument();
   });
 
-  it('Should render spinner when loading state is true', async () => {
-    renderSut({
-      error: '',
-      handleClick: () => {},
-      isLoading: true,
-    });
+  it('Should have inputs to receive email and password', () => {
+    renderSut();
+    expect(screen.getByPlaceholderText('example@mail.com')).toBeInTheDocument();
+    expect(screen.getByPlaceholderText('password')).toBeInTheDocument();
+  });
 
-    expect(screen.getByTestId('spinner')).toBeInTheDocument();
+  it('Should have a login button to send data', () => {
+    renderSut();
+    expect(screen.getByRole('button', { name: /login/i })).toBeInTheDocument();
   });
 });
