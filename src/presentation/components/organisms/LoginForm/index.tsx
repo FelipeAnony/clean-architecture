@@ -13,7 +13,7 @@ const LoginForm: React.FC = () => {
       <h2>LOGIN</h2>
       <div className={Styles.inputContainer}>
         <Input
-          placeholder="example@mail.com"
+          placeholder="Email"
           name="email"
           type="email"
           required
@@ -21,7 +21,12 @@ const LoginForm: React.FC = () => {
         />
       </div>
       <div className={`${Styles.inputContainer} ${Styles.valid}`}>
-        <Input placeholder="password" name="password" type="pasword" required />
+        <Input
+          placeholder="password"
+          name="password"
+          type="password"
+          required
+        />
       </div>
       <button type="submit" onClick={(e) => handleClick(e)}>
         Login

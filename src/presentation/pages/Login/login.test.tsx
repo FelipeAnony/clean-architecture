@@ -15,8 +15,8 @@ describe('', () => {
 
   it('Should have inputs to receive email and password', () => {
     renderSut();
-    expect(screen.getByPlaceholderText('example@mail.com')).toBeInTheDocument();
-    expect(screen.getByPlaceholderText('password')).toBeInTheDocument();
+    expect(screen.getByPlaceholderText(/email/i)).toBeInTheDocument();
+    expect(screen.getByPlaceholderText(/password/i)).toBeInTheDocument();
   });
 
   it('Should have a login button to send data', () => {
