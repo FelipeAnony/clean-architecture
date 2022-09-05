@@ -6,7 +6,7 @@ import Styles from './styles.scss';
 import { useLoginForm } from './useLoginForm';
 
 const LoginForm: React.FC = () => {
-  const { handleClick, isLoading, error } = useLoginForm();
+  const { handleClick, isLoading, error, validation } = useLoginForm();
 
   return (
     <form className={Styles.form}>
@@ -16,6 +16,7 @@ const LoginForm: React.FC = () => {
           placeholder="Email"
           name="email"
           type="email"
+          onChange={(e) => validation.validate(e.target.value)}
           required
           autoFocus
         />

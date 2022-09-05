@@ -1,9 +1,13 @@
 import { useState } from 'react';
 
+import { emailValidation } from '@/main/EmailValidation';
+import { Validation } from '@/presentation/protocols/validation';
+
 export type UseLoginFormReturn = {
   error: string;
   isLoading: boolean;
   handleClick: (params: any) => void;
+  validation: Validation;
 };
 
 export const useLoginForm = (): UseLoginFormReturn => {
@@ -15,5 +19,5 @@ export const useLoginForm = (): UseLoginFormReturn => {
     setIsLoading(!isLoading);
   };
 
-  return { error, handleClick, isLoading };
+  return { error, handleClick, isLoading, validation: emailValidation };
 };

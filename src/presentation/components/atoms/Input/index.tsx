@@ -1,13 +1,9 @@
 import Styles from './styles.scss';
 
-type Props = {
-  type: string;
-  name: string;
-  placeholder?: string;
-  required?: boolean;
-  autoFocus?: boolean;
-  id?: string;
-};
+type Props = React.DetailedHTMLProps<
+  React.InputHTMLAttributes<HTMLInputElement>,
+  HTMLInputElement
+>;
 
 const Input: React.FC<Props> = (props) => {
   return <input {...props} className={Styles.email} />;

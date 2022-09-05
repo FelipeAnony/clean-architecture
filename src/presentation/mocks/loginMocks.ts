@@ -11,4 +11,9 @@ export const defaultUseLoginReturn: UseLoginFormReturn = {
   error: '',
   handleClick: () => {},
   isLoading: false,
+  validation: {
+    validate(email) {
+      return '';
+    },
+  },
 };
